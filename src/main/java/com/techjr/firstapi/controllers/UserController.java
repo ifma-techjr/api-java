@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity retrieveUser(@PathVariable String id){
+    public ResponseEntity<User> retrieveUser(@PathVariable String id){
         UUID uuid = UUID.fromString(id);
         try {
             User user = userService.retrieveUser(uuid);
